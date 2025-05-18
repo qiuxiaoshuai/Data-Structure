@@ -52,7 +52,7 @@ int delNode(Linkdata *L,int a[],int lenth_a){
     printf("ÄæĞòºóµÄÁ´±í£º");
     printList(*L);    
 }
-
+//²âÊÔgit
 int main(){
     Linkdata L;
     int a[] = {0,1,7,6,5,4,3,1,1,0,-1,-2,-3};
