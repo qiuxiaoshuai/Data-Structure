@@ -55,7 +55,8 @@ int delNode(Linkdata *L,int a[],int lenth_a){
 
 int main(){
     Linkdata L;
-    int a[] = {9,1,7,6,5,4,3,1,1,0,-1,-2,-3};
+    int a[] = {0,1,7,6,5,4,3,1,1,0,-1,-2,-3};
     int len_a = sizeof(a) / sizeof(a[0]);
     delNode(&L,a,len_a);
 }
+git config --global https.proxy https://127.0.0.1:10809
