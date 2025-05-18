@@ -59,4 +59,3 @@ int main(){
     int len_a = sizeof(a) / sizeof(a[0]);
     delNode(&L,a,len_a);
 }
-git config --global https.proxy https://127.0.0.1:10809
