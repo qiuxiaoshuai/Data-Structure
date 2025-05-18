@@ -59,3 +59,4 @@ int main(){
     int len_a = sizeof(a) / sizeof(a[0]);
     delNode(&L,a,len_a);
 }
+//≤‚ ‘git
