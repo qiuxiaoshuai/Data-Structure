@@ -30,11 +30,29 @@ int csrList(LinkNode *L,int a[],int len_a){
 }
 
 int ContinuousList(LinkNode *A,LinkNode *B,int len_A,int len_B){
-    LinkNode tail_A = (*A)->next,tail_B = (*B)->next;
-    while(tail_A == NULL && tail_B == NULL){
-        if(tail_A->data != tail_B->data){
-            len_A--;
-            tail_A =tail_A->next;
+    if(*B == NULL)return 1;//判断是否为空集，空集合是全部的子集合
+    LinkNode tail_A = (*A),tail_B = (*B);
+    while(*A){
+        if(tail_A->data == tail_B->data){
+            LinkNode tail_A = (*A),tail_B = (*B);
+            while(tail_A && tail_B && tail_A == tail_B){
+                tail_A = tail_A->next;
+                tail_B = tail_B->next;
         }
+        if(tail_B == NULL)return 1;
+        }
+        *A = (*A)->next;
     }
+    return 0;   
+}
+
+int main(){
+    LinkNode A,B;
+    int a[] = {0,1,2,3,4,4,5,6},
+    b[] = {3,4,4};
+    int len_a = sizeof(a) / sizeof(a[0]),
+    len_b = sizeof(b) / sizeof(b[0]);
+    csrList(&A,a,len_a);
+    csrList(&B,b,len_b);
+    printf("%d",ContinuousList(&A,&B,len_a,len_b));
 }
