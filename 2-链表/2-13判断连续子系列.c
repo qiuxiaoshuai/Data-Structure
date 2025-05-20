@@ -31,25 +31,24 @@ int csrList(LinkNode *L,int a[],int len_a){
 
 int ContinuousList(LinkNode *A,LinkNode *B,int len_A,int len_B){
     if(*B == NULL)return 1;//判断是否为空集，空集合是全部的子集合
-    LinkNode tail_A = (*A),tail_B = (*B);
-    while(*A){
-        if(tail_A->data == tail_B->data){
-            LinkNode tail_A = (*A),tail_B = (*B);
-            while(tail_A && tail_B && tail_A == tail_B){
-                tail_A = tail_A->next;
-                tail_B = tail_B->next;
+    LinkNode tail_A = (*A)->next,tail_B = (*B)->next;//头指针为空，指向下一个位置
+    while(tail_A){//当前为NULL的时候结束循环
+        while(tail_A && tail_B && tail_A->data == tail_B->data){//判断A，B是否为空，并且值是否相等
+            tail_A = tail_A->next;
+            tail_B = tail_B->next;
         }
-        if(tail_B == NULL)return 1;
+        if(tail_B == NULL){
+            return 1;
         }
-        *A = (*A)->next;
+        tail_A = tail_A->next;
     }
     return 0;   
 }
 
 int main(){
     LinkNode A,B;
-    int a[] = {0,1,2,3,4,4,5,6},
-    b[] = {3,4,4};
+    int a[] = {1,2,0,1,2,3,4,4,5,6},
+    b[] = {1,2,3};
     int len_a = sizeof(a) / sizeof(a[0]),
     len_b = sizeof(b) / sizeof(b[0]);
     csrList(&A,a,len_a);
