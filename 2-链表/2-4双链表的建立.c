@@ -22,6 +22,7 @@ int InitList(Linkdata *L,int arr[],int len_arr){
     head->next = NULL;
     *L = head;//让L指向头节点
     Linkdata tali = head;//用于记录尾部
+    Linkdata p = (Node *)malloc(sizeof(Node));
     for(int i=0;i<len_arr;i++){
         Linkdata s = (Node *)malloc(sizeof(Node));
         s->data = arr[i];
