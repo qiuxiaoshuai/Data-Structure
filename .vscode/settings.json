@@ -9,12 +9,7 @@
     "files.watcherExclude": {
         "**/.bloop": true,
         "**/.metals": true,
-<<<<<<< HEAD
-        "**/.ammonite": true,
-        "**/target": true
-=======
         "**/.ammonite": true
->>>>>>> 8d9eb7f4b54c4b000dc99564106e2187ecfb2469
     },
     "workbench.editor.empty.hint": "hidden",
     "background.fullscreen": {
@@ -53,7 +48,8 @@
         
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "c": "cd $dir; if (!(Test-Path \"bin\")) { New-Item -ItemType Directory -Path \"bin\" | Out-Null }; gcc \"$fileName\" -o \"bin/$fileNameWithoutExt.exe\"; if ($?) { ./bin/$fileNameWithoutExt.exe }",
+        //"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "zig": "zig run",
         "cpp": "cd $dir && if [ ! -d \"bin\" ];then mkdir bin;fi  && g++ $fileName -o bin/$fileNameWithoutExt && bin/$fileNameWithoutExt",
         // "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
