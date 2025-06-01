@@ -113,6 +113,21 @@
 
 ---
 
+---
+
+## 💖 为爱发电
+
+如果你喜欢这个项目，或者它对你有帮助，欢迎通过以下方式支持开发者持续创作：
+
+| 微信赞赏 | 支付宝赞赏 |
+| -------- | ---------- |
+| <img src="https://github.com/user-attachments/assets/56c55ac6-e43f-480a-b87c-49c3eb61021e" width="300" height="400"> | <img src="https://github.com/user-attachments/assets/87747148-76f9-4cd7-8864-f48501bec597" width="300" height="400"> |
+
+
+
+你的每一份支持，都是我继续优化的动力！✨
+
+---
 ## 🤝 贡献与交流
 
 欢迎学习交流，如果你也在学习数据结构或准备面试，可以：
