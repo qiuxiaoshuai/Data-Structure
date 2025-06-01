@@ -4,7 +4,7 @@
 typedef struct Node{
     int data;
     struct Node *next;
-    //¶¨ÒåÍ·Î²½Úµã
+    //å®šä¹‰å¤´å°¾èŠ‚ç‚¹
 }Node,*Linkdata;
 
 void printList(Linkdata List){
@@ -18,28 +18,28 @@ void printList(Linkdata List){
 int delNode(Linkdata *L,int a[],int number,int lenth_a){
     *L = NULL;
     for(int i =0;i<lenth_a;i++){
-        //Ã¿´Î´´½¨Ò»¸öNode±ê¼Çµ±Ç°Êı×éa[i]µÄÖµ
+        //æ¯æ¬¡åˆ›å»ºä¸€ä¸ªNodeæ ‡è®°å½“å‰æ•°ç»„a[i]çš„å€¼
         Linkdata s = (Node *)malloc(sizeof(Node));
         s->data = a[i];
-        //sµÄÏÂÒ»¸öÎ»ÖÃÖ¸Ïòµ±Ç°Á´±íµÄÎ»ÖÃ
+        //sçš„ä¸‹ä¸€ä¸ªä½ç½®æŒ‡å‘å½“å‰é“¾è¡¨çš„ä½ç½®
         s->next = *L;
-        //¸üĞÂÁ´±í
+        //æ›´æ–°é“¾è¡¨
         *L = s;
     }
-    printf("Ô­Á´±í£º");
+    printf("åŸé“¾è¡¨ï¼š");
     printList(*L);
-    Linkdata p = *L,pre = NULL;//´´½¨Á½¸öÖ¸Õë£¬Ò»¸öÎªµ±Ç°Î»ÖÃµÄÖ¸Õë£¬Ò»¸öÎªµ±Ç°Î»ÖÃµÄÉÏÒ»¸öµÄÖ¸Õë
+    Linkdata p = *L,pre = NULL;//åˆ›å»ºä¸¤ä¸ªæŒ‡é’ˆï¼Œä¸€ä¸ªä¸ºå½“å‰ä½ç½®çš„æŒ‡é’ˆï¼Œä¸€ä¸ªä¸ºå½“å‰ä½ç½®çš„ä¸Šä¸€ä¸ªçš„æŒ‡é’ˆ
     // [1] --> [2] --> [3] --> [4]
-    //      ¡ü       ¡ü
+    //      â†‘       â†‘
     //    prev      p
 
     while(p->next!=NULL){
         if(p->data == number){
-            if(pre == NULL){ //ÅĞ¶ÏÕâÀïÉ¾³ıµÄÊÇ·ñÎªÍ·½Úµã
+            if(pre == NULL){ //åˆ¤æ–­è¿™é‡Œåˆ é™¤çš„æ˜¯å¦ä¸ºå¤´èŠ‚ç‚¹
                 *L = p->next;
                 free(p);
                 p = *L;
-            }else{//É¾³ıµÄÊÇÖĞ¼ä½Úµã»òÎ²½Úµã
+            }else{//åˆ é™¤çš„æ˜¯ä¸­é—´èŠ‚ç‚¹æˆ–å°¾èŠ‚ç‚¹
                 pre->next = p->next;
                 free(p);
                 p = pre->next;
@@ -50,7 +50,7 @@ int delNode(Linkdata *L,int a[],int number,int lenth_a){
             p = p->next;
         }
     }
-    printf("É¾³ı%dºóµÄÁ´±í£º", number);
+    printf("åˆ é™¤%dåçš„é“¾è¡¨ï¼š", number);
     printList(*L);    
 }
 

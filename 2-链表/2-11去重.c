@@ -25,7 +25,7 @@ void NextList(LinkNode *L,int a[],int len){
         tail->next = s;
         tail = s;
     }
-    printf_List((*L)->next);//����Ҫ��ͷ�ڵ��βָ�뿪ʼ��ӡ
+    printf_List((*L)->next);//这里要从头节点的尾指针开始打印
 }
 
 void QucList(LinkNode *L){

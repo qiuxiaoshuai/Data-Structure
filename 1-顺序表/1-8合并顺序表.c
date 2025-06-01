@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> // ÎªÁË exit()
+#include <stdlib.h> // ä¸ºäº† exit()
 #define Maxsize 10
 
 typedef struct List{

@@ -4,7 +4,7 @@
 typedef struct Node{
     int data;
     struct Node *prior ,*next;
-    //¶¨ÒåÍ·Î²½Úµã
+    //å®šä¹‰å¤´å°¾èŠ‚ç‚¹
 }Node,*Linkdata;
 
 void printList(Linkdata List){
@@ -16,12 +16,12 @@ void printList(Linkdata List){
 }
 
 int InitList(Linkdata *L,int arr[],int len_arr){
-    //´´½¨Í·½Úµã
+    //åˆ›å»ºå¤´èŠ‚ç‚¹
     Linkdata head = (Node *)malloc(sizeof(Node));
     head->prior = NULL;
     head->next = NULL;
-    *L = head;//ÈÃLÖ¸ÏòÍ·½Úµã
-    Linkdata tali = head;//ÓÃÓÚ¼ÇÂ¼Î²²¿
+    *L = head;//è®©LæŒ‡å‘å¤´èŠ‚ç‚¹
+    Linkdata tali = head;//ç”¨äºè®°å½•å°¾éƒ¨
     for(int i=0;i<len_arr;i++){
         Linkdata s = (Node *)malloc(sizeof(Node));
         s->data = arr[i];
@@ -32,39 +32,39 @@ int InitList(Linkdata *L,int arr[],int len_arr){
     }
     printList(head->next);
 };
-//²åÈë
+//æ’å…¥
 int carList(Linkdata *L,int number,int index){
     Linkdata p = *L;
     for(int i=0;i<index;i++){
-        p = p->next; //Ò»Ö±¸üĞÂµ½ĞèÒª²åÈë½ÚµãµÄÎ»ÖÃ
+        p = p->next; //ä¸€ç›´æ›´æ–°åˆ°éœ€è¦æ’å…¥èŠ‚ç‚¹çš„ä½ç½®
     }
     Linkdata s = (Node *)malloc(sizeof(Node));
     s->data = number;
-    s->next = p->next;//ÈÃĞÂ½Úµã s µÄºó¼ÌÖ¸ÏòÔ­À´ p µÄºó¼Ì
-    s->prior = p;//ÈÃĞÂ½Úµã s µÄÇ°ÇıÖ¸Ïò p
+    s->next = p->next;//è®©æ–°èŠ‚ç‚¹ s çš„åç»§æŒ‡å‘åŸæ¥ p çš„åç»§
+    s->prior = p;//è®©æ–°èŠ‚ç‚¹ s çš„å‰é©±æŒ‡å‘ p
     if(p->next!=NULL){
-        //ÅĞ¶ÏÊÇ·ñÎª¿Õ
-        p->next->prior = s; //¹Ø¼üÈÃ B ÖªµÀËüÇ°Ãæ»»ÈËÁË
+        //åˆ¤æ–­æ˜¯å¦ä¸ºç©º
+        p->next->prior = s; //å…³é”®è®© B çŸ¥é“å®ƒå‰é¢æ¢äººäº†
     }
-    p->next = s;//ÈÃ p µÄºó¼ÌÖ¸ÏòĞÂ½Úµã s
+    p->next = s;//è®© p çš„åç»§æŒ‡å‘æ–°èŠ‚ç‚¹ s
     printList((*L)->next);
 }
-//É¾³ı
+//åˆ é™¤
 void delList(Linkdata *L,int index){
     Linkdata p = *L;
     for(int i=0;i<index;i++){
-        p = p->next;//°Ñµ±Ç°½Úµã¸üĞÂµ½ÒªÉ¾³ıµÄÎ»ÖÃ
+        p = p->next;//æŠŠå½“å‰èŠ‚ç‚¹æ›´æ–°åˆ°è¦åˆ é™¤çš„ä½ç½®
     }
     if(p == NULL || p->next == NULL){
-        printf("Î»ÖÃ·Ç·¨orÔ½½ç\n");
+        printf("ä½ç½®éæ³•orè¶Šç•Œ\n");
         return;
     }
-    Linkdata q = p->next; //ÒªÉ¾³ıµÄ½Úµã
+    Linkdata q = p->next; //è¦åˆ é™¤çš„èŠ‚ç‚¹
     if(q->next != NULL){
-        q->next->prior = p;//¹Ø¼üÈÃ q ÖªµÀËüÇ°Ãæ»»ÈËÁË
+        q->next->prior = p;//å…³é”®è®© q çŸ¥é“å®ƒå‰é¢æ¢äººäº†
     }
     p->next = q->next;
-    free(q);//ÊÍ·Å±»É¾³ı½ÚµãµÄÄÚ´æ
+    free(q);//é‡Šæ”¾è¢«åˆ é™¤èŠ‚ç‚¹çš„å†…å­˜
     printList((*L)->next);
 }
  int main(){

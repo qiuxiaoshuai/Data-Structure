@@ -8,56 +8,56 @@ typedef struct {
     int top;
 } SqStack;
 
-// ³õÊ¼»¯Õ»
+// åˆå§‹åŒ–æ ˆ
 void InitStack(SqStack *S) {
     S->top = -1;
 }
 
-// ÅĞ¶ÏÕ»ÊÇ·ñÎª¿Õ
+// åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º
 bool IsEmpty(SqStack *S) {
     return S->top == -1;
 }
 
-// ÅĞ¶ÏÕ»ÊÇ·ñÒÑÂú
+// åˆ¤æ–­æ ˆæ˜¯å¦å·²æ»¡
 bool IsFull(SqStack *S) {
     return S->top == MaxSize - 1;
 }
 
-// ÈëÕ»£¨Ò»¸öÔªËØ£©
+// å…¥æ ˆï¼ˆä¸€ä¸ªå…ƒç´ ï¼‰
 bool Push(SqStack *S, int x) {
     if (IsFull(S)) return false;
     S->data[++(S->top)] = x;
     return true;
 }
 
-// ³öÕ»£¨Ò»¸öÔªËØ£©
+// å‡ºæ ˆï¼ˆä¸€ä¸ªå…ƒç´ ï¼‰
 bool Pop(SqStack *S, int *x) {
     if (IsEmpty(S)) return false;
     *x = S->data[(S->top)--];
     return true;
 }
 
-// »ñÈ¡Õ»¶¥ÔªËØ£¨²»³öÕ»£©
+// è·å–æ ˆé¡¶å…ƒç´ ï¼ˆä¸å‡ºæ ˆï¼‰
 bool GetTop(SqStack *S, int *x) {
     if (IsEmpty(S)) return false;
     *x = S->data[S->top];
     return true;
 }
 
-// ±éÀúÕ»£¨²»ÆÆ»µ£©
+// éå†æ ˆï¼ˆä¸ç ´åï¼‰
 void TraverseStack(SqStack *S) {
     if (IsEmpty(S)) {
-        printf("Õ»Îª¿Õ\n");
+        printf("æ ˆä¸ºç©º\n");
         return;
     }
-    printf("Õ»ÄÚÈİ´ÓÕ»¶¥µ½Õ»µ×Îª£º");
+    printf("æ ˆå†…å®¹ä»æ ˆé¡¶åˆ°æ ˆåº•ä¸ºï¼š");
     for (int i = S->top; i >= 0; i--) {
         printf("%d ", S->data[i]);
     }
     printf("\n");
 }
 
-// Çå¿ÕÕ»
+// æ¸…ç©ºæ ˆ
 void ClearStack(SqStack *S) {
     S->top = -1;
 }
@@ -69,10 +69,10 @@ int main() {
     int arr[] = {1,2,3,4,5,6,7,8,9};
     int len = sizeof(arr) / sizeof(arr[0]);
 
-    // ÅúÁ¿ÈëÕ»
+    // æ‰¹é‡å…¥æ ˆ
     for (int i = 0; i < len; i++) {
         if (!Push(&S, arr[i])) {
-            printf("Õ»ÒÑÂú£¬ÎŞ·¨Ñ¹ÈëÔªËØ %d\n", arr[i]);
+            printf("æ ˆå·²æ»¡ï¼Œæ— æ³•å‹å…¥å…ƒç´  %d\n", arr[i]);
         }
     }
 
@@ -80,11 +80,11 @@ int main() {
 
     int x;
     while (Pop(&S, &x)) {
-        printf("³öÕ»ÔªËØ£º%d\n", x);
+        printf("å‡ºæ ˆå…ƒç´ ï¼š%d\n", x);
     }
 
     if (IsEmpty(&S)) {
-        printf("Õ»ÒÑ¿Õ\n");
+        printf("æ ˆå·²ç©º\n");
     }
 
     return 0;

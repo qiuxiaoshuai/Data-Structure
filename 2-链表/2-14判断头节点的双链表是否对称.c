@@ -15,16 +15,16 @@ void printList(LinkNode List){
 }
 
 void csrList(LinkNode *L,int a[],int len_a){
-    *L = (Node *)malloc(sizeof(Node)); // ´´½¨Í·½áµã£¨²»´æÊı¾İ£©
+    *L = (Node *)malloc(sizeof(Node)); // åˆ›å»ºå¤´ç»“ç‚¹ï¼ˆä¸å­˜æ•°æ®ï¼‰
     (*L)->next = NULL;
     (*L)->precur = NULL;
-    LinkNode tail = *L; // Î²Ö¸Õë³õÊ¼»¯ÎªÍ·½áµã
+    LinkNode tail = *L; // å°¾æŒ‡é’ˆåˆå§‹åŒ–ä¸ºå¤´ç»“ç‚¹
     LinkNode fir = NULL;
     for (int i = 0; i < len_a; i++) {
         LinkNode s = (Node *)malloc(sizeof(Node));
         s->data = a[i];
         s->next = NULL;
-        s->precur = tail;//sµÄÇ°Çı½ÚµãÊÇÎ´¸ü¸ÄµÄtail
+        s->precur = tail;//sçš„å‰é©±èŠ‚ç‚¹æ˜¯æœªæ›´æ”¹çš„tail
         tail->next = s;
         tail = s;
     }
@@ -49,5 +49,5 @@ int main(){
     int len_a = sizeof(a) / sizeof(a[0]);
     csrList(&L,a,len_a);
     int res = IfSymmetry(&L,len_a);
-    printf("%s",res == 1 ? "¶Ô³Æ":"²»¶Ô³Æ");
+    printf("%s",res == 1 ? "å¯¹ç§°":"ä¸å¯¹ç§°");
 }

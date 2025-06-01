@@ -19,9 +19,9 @@ void printList(LinkNode List){
 // head->[1]->[2]->[3]->NULL
 
 int csrList(LinkNode *L,int a[],int len_a){
-    *L = (Node *)malloc(sizeof(Node)); // ´´½¨Í·½áµã£¨²»´æÊı¾İ£©
+    *L = (Node *)malloc(sizeof(Node)); // åˆ›å»ºå¤´ç»“ç‚¹ï¼ˆä¸å­˜æ•°æ®ï¼‰
     (*L)->next = NULL;
-    LinkNode tail = *L; // Î²Ö¸Õë³õÊ¼»¯ÎªÍ·½áµã
+    LinkNode tail = *L; // å°¾æŒ‡é’ˆåˆå§‹åŒ–ä¸ºå¤´ç»“ç‚¹
 
     for (int i = 0; i < len_a; i++) {
         LinkNode s = (Node *)malloc(sizeof(Node));

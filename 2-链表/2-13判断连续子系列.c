@@ -15,9 +15,9 @@ void printList(LinkNode List){
 }
 
 int csrList(LinkNode *L,int a[],int len_a){
-    *L = (Node *)malloc(sizeof(Node)); // ´´½¨Í·½áµã£¨²»´æÊı¾İ£©
+    *L = (Node *)malloc(sizeof(Node)); // åˆ›å»ºå¤´ç»“ç‚¹ï¼ˆä¸å­˜æ•°æ®ï¼‰
     (*L)->next = NULL;
-    LinkNode tail = *L; // Î²Ö¸Õë³õÊ¼»¯ÎªÍ·½áµã
+    LinkNode tail = *L; // å°¾æŒ‡é’ˆåˆå§‹åŒ–ä¸ºå¤´ç»“ç‚¹
 
     for (int i = 0; i < len_a; i++) {
         LinkNode s = (Node *)malloc(sizeof(Node));
@@ -30,10 +30,10 @@ int csrList(LinkNode *L,int a[],int len_a){
 }
 
 int ContinuousList(LinkNode *A,LinkNode *B,int len_A,int len_B){
-    if(*B == NULL)return 1;//ÅĞ¶ÏÊÇ·ñÎª¿Õ¼¯£¬¿Õ¼¯ºÏÊÇÈ«²¿µÄ×Ó¼¯ºÏ
-    LinkNode tail_A = (*A)->next,tail_B = (*B)->next;//Í·Ö¸ÕëÎª¿Õ£¬Ö¸ÏòÏÂÒ»¸öÎ»ÖÃ
-    while(tail_A){//µ±Ç°ÎªNULLµÄÊ±ºò½áÊøÑ­»·
-        while(tail_A && tail_B && tail_A->data == tail_B->data){//ÅĞ¶ÏA£¬BÊÇ·ñÎª¿Õ£¬²¢ÇÒÖµÊÇ·ñÏàµÈ
+    if(*B == NULL)return 1;//åˆ¤æ–­æ˜¯å¦ä¸ºç©ºé›†ï¼Œç©ºé›†åˆæ˜¯å…¨éƒ¨çš„å­é›†åˆ
+    LinkNode tail_A = (*A)->next,tail_B = (*B)->next;//å¤´æŒ‡é’ˆä¸ºç©ºï¼ŒæŒ‡å‘ä¸‹ä¸€ä¸ªä½ç½®
+    while(tail_A){//å½“å‰ä¸ºNULLçš„æ—¶å€™ç»“æŸå¾ªç¯
+        while(tail_A && tail_B && tail_A->data == tail_B->data){//åˆ¤æ–­Aï¼ŒBæ˜¯å¦ä¸ºç©ºï¼Œå¹¶ä¸”å€¼æ˜¯å¦ç›¸ç­‰
             tail_A = tail_A->next;
             tail_B = tail_B->next;
         }

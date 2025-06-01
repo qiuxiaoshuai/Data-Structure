@@ -16,11 +16,11 @@ void printfList(List *L) {
 int carList(List *L,int m,int n){
     int tmpList[Maxsize];
     int index = 0;
-    //°ÑµÚÒ»¸öÏßĞÔ±í´æ·ÅÔÚÊı×éÖĞ
+    //æŠŠç¬¬ä¸€ä¸ªçº¿æ€§è¡¨å­˜æ”¾åœ¨æ•°ç»„ä¸­
     for(int i = 0;i<m;i++){
         tmpList[i] = L->data[i];
     }
-    //ÔÚµÚÒ»¸öË³Ğò±íÖĞ½»»»µÚ¶ş¸öË³Ğò±íµÄÖµ
+    //åœ¨ç¬¬ä¸€ä¸ªé¡ºåºè¡¨ä¸­äº¤æ¢ç¬¬äºŒä¸ªé¡ºåºè¡¨çš„å€¼
     for(int i = 0;i<n;i++){
         L->data[i] = L->data[i+m];
     }

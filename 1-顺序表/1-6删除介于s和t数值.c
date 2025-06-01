@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> // ÎªÁË exit()
+#include <stdlib.h> // ä¸ºäº† exit()
 #define Maxsize 10
 
 typedef struct {
@@ -16,23 +16,23 @@ void printfList(List *L) {
 
 void delList(List *L, int s, int t) {
     if (s >= 1 || s > t) {
-        printf("´íÎó£ºs ºÍ t µÄÖµ²»ºÏÀí£¬Ó¦Âú×ã s < 1 ÇÒ s <= t¡£\n");
+        printf("é”™è¯¯ï¼šs å’Œ t çš„å€¼ä¸åˆç†ï¼Œåº”æ»¡è¶³ s < 1 ä¸” s <= tã€‚\n");
         exit(1);
     }
     if (L->leng == 0) {
-        printf("´íÎó£ºË³Ğò±íÎª¿Õ£¬ÎŞ·¨É¾³ı¡£\n");
+        printf("é”™è¯¯ï¼šé¡ºåºè¡¨ä¸ºç©ºï¼Œæ— æ³•åˆ é™¤ã€‚\n");
         exit(1);
     }
 
-    int k = 0;  // k ±íÊ¾µ±Ç°Ğ´ÈëÎ»ÖÃ
+    int k = 0;  // k è¡¨ç¤ºå½“å‰å†™å…¥ä½ç½®
     for (int i = 0; i < L->leng; i++) {
         if (L->data[i] < s || L->data[i] > t) {
-            L->data[k++] = L->data[i];  // ±£Áô²»ÔÚ [s, t] Çø¼äµÄÔªËØ
+            L->data[k++] = L->data[i];  // ä¿ç•™ä¸åœ¨ [s, t] åŒºé—´çš„å…ƒç´ 
         }
     }
     L->leng = k;
 
-    printf("É¾³ıºóË³Ğò±íÎª£º");
+    printf("åˆ é™¤åé¡ºåºè¡¨ä¸ºï¼š");
     printfList(L);
 }
 
@@ -42,6 +42,6 @@ int main() {
     int s = -1;
     int t = 1;
 
-    delList(&L, s, t);  // É¾³ıÖµÔÚ [-1, 1] Çø¼äµÄÔªËØ£¨º¬¶Ëµã£©
+    delList(&L, s, t);  // åˆ é™¤å€¼åœ¨ [-1, 1] åŒºé—´çš„å…ƒç´ ï¼ˆå«ç«¯ç‚¹ï¼‰
     return 0;
 }

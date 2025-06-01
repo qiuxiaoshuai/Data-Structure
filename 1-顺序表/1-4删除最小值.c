@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include <stdlib.h> // Ϊ�� exit
+#include <stdlib.h> // 为了 exit
 #define Maxsize 10
 
 typedef struct{
@@ -16,7 +16,7 @@ void printfList(List *L){
 
 int delList(List *L){
     if(L->leng == 0){
-        printf("ListΪ�ձ�");
+        printf("List为空表");
         return 1;
     }
     int Min = L->data[0];

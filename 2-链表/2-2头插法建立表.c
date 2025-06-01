@@ -18,17 +18,17 @@ void printList(LinkNode List){
 //[1]->NULL
 //[2]->[1]->NULL
 //[3]->[2]->[1]->NULL
-// ×îÖÕÁ´±íË³ĞòÊÇ£º3 ¡ú 2 ¡ú 1
+// æœ€ç»ˆé“¾è¡¨é¡ºåºæ˜¯ï¼š3 â†’ 2 â†’ 1
 
 void carList(LinkNode *List,int a[],int lenth_a){
     *List = NULL;
     for(int i =0;i<lenth_a;i++){
-        //Ã¿´Î´´½¨Ò»¸öNode±ê¼Çµ±Ç°Êı×éa[i]µÄÖµ
+        //æ¯æ¬¡åˆ›å»ºä¸€ä¸ªNodeæ ‡è®°å½“å‰æ•°ç»„a[i]çš„å€¼
         LinkNode s = (Node *)malloc(sizeof(Node));
         s->data = a[i];
-        //sµÄÏÂÒ»¸öÎ»ÖÃÖ¸Ïòµ±Ç°Á´±íµÄÎ»ÖÃ
+        //sçš„ä¸‹ä¸€ä¸ªä½ç½®æŒ‡å‘å½“å‰é“¾è¡¨çš„ä½ç½®
         s->next = *List;
-        //¸üĞÂÁ´±í
+        //æ›´æ–°é“¾è¡¨
         *List = s;
     }
     printList(*List);
@@ -40,5 +40,5 @@ int main(){
     int lenth_a = sizeof(a) / sizeof(a[0]);
     carList(&L,a,lenth_a);
     int *p = &a[1];
-    printf("Öµ£º%dµØÖ·:%d",*p,p);
+    printf("å€¼ï¼š%dåœ°å€:%d",*p,p);
 }

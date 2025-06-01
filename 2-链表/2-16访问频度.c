@@ -33,7 +33,7 @@ void InitList(LinkList *L,int add[],int len){
 }
 
 int Locate(LinkList L,int x){
-    //Ôö¼Ófreq
+    //å¢žåŠ freq
     LinkList p = L;
     while(p != NULL){
         if(p->data == x){
@@ -43,16 +43,16 @@ int Locate(LinkList L,int x){
         p = p->next;
     }
     if(p == NULL) return 0;
-    //¸ù¾ÝfreqµÄ´óÐ¡Ã°ÅÝÅÅÐò
+    //æ ¹æ®freqçš„å¤§å°å†’æ³¡æŽ’åº
     while (p->pre != L && p->freq > p->pre->freq) {
     LinkList q = p->pre;
 
-    // ´ÓÁ´±íÖÐ¶Ï¿ª p
+    // ä»Žé“¾è¡¨ä¸­æ–­å¼€ p
     q->next = p->next;
     if (p->next != NULL)
         p->next->pre = q;
 
-    // ²åÈëµ½ q Ç°Ãæ
+    // æ’å…¥åˆ° q å‰é¢
     p->pre = q->pre;
     if (q->pre != NULL)
         q->pre->next = p;

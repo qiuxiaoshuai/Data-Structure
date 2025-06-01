@@ -4,7 +4,7 @@
 typedef struct Node{
     int data;
     struct Node *prior ,*next;
-    //¶¨ÒåÍ·Î²½Úµã
+    //å®šä¹‰å¤´å°¾èŠ‚ç‚¹
 }Node,*Linkdata;
 
 void printList(Linkdata List){
@@ -16,12 +16,12 @@ void printList(Linkdata List){
 }
 
 int InitList(Linkdata *L,int arr[],int len_arr){
-    //´´½¨Í·½Úµã
+    //åˆ›å»ºå¤´èŠ‚ç‚¹
     Linkdata head = (Node *)malloc(sizeof(Node));
     head->prior = NULL;
     head->next = NULL;
-    *L = head;//ÈÃLÖ¸ÏòÍ·½Úµã
-    Linkdata tali = head;//ÓÃÓÚ¼ÇÂ¼Î²²¿
+    *L = head;//è®©LæŒ‡å‘å¤´èŠ‚ç‚¹
+    Linkdata tali = head;//ç”¨äºè®°å½•å°¾éƒ¨
     Linkdata p = (Node *)malloc(sizeof(Node));
     for(int i=0;i<len_arr;i++){
         Linkdata s = (Node *)malloc(sizeof(Node));

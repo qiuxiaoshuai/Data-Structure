@@ -2,19 +2,19 @@
 
 void add(int x){
     x = 1024;
-    printf("addĞÎ²ÎµÄÖµ:%d\n",x);
+    printf("addå½¢å‚çš„å€¼:%d\n",x);
 }
 void app(int *x){
     *x = 1024;
-    printf("appĞÎ²ÎµÄÖµ:%d\n",*x);
+    printf("appå½¢å‚çš„å€¼:%d\n",*x);
 }
 
 int main(){
     int x = 1;
-    printf("µ÷ÓÃaddÇ°£ºx=%d\n",x);
+    printf("è°ƒç”¨addå‰ï¼šx=%d\n",x);
     add(x);
-    printf("µ÷ÓÃaddºó£ºx=%d\n",x);
+    printf("è°ƒç”¨addåï¼šx=%d\n",x);
     app(&x);
-    // ´«ÈëµÄÊÇµØÖ·£¬Ö±½ÓĞŞ¸ÄµØÖ·µÄÖµ
-    printf("µ÷ÓÃaddºó£ºx=%d\n",x);
+    // ä¼ å…¥çš„æ˜¯åœ°å€ï¼Œç›´æ¥ä¿®æ”¹åœ°å€çš„å€¼
+    printf("è°ƒç”¨addåï¼šx=%d\n",x);
 }

@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-//½«h2Á´½Óµ½h1
+//å°†h2é“¾æŽ¥åˆ°h1
 typedef struct Node{
     int data;
     struct Node *next;
