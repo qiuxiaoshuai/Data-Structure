@@ -9,7 +9,8 @@
     "files.watcherExclude": {
         "**/.bloop": true,
         "**/.metals": true,
-        "**/.ammonite": true
+        "**/.ammonite": true,
+        "**/target": true
     },
     "workbench.editor.empty.hint": "hidden",
     "background.fullscreen": {
