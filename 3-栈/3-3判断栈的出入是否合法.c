@@ -22,9 +22,9 @@ bool pd(char add[],int len){
 int main(){
     // char arr[] = {'I', 'O', 'I', 'I', 'O', 'I', 'O', 'O'};
     char arr[100];
-    printf("璇疯緭鍏ユ爤搴忓垪锛堝彧鍖呭惈I鍜孫锛夛細");
+    printf("请输入栈序列（只包含I和O）：");
     scanf("%s",arr);
-    //娉ㄦ剰杩欓噷鎴戣缃殑闀垮害锛屽洜姝や笉鑳藉湪浣跨敤sizeof鍒ゆ柇闀垮害
+    //注意这里我设置的长度，因此不能在使用sizeof判断长度
     int len = strlen(arr);
     printf("%d\n",len);
     printf("%d",pd(arr,len));
