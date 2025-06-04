@@ -24,8 +24,8 @@
         "interval": 0
     },
     "bitoAI.codeCompletion.setAutoCompletionTriggerLogic": 250,
-    "files.encoding": "gbk",
-    // "files.encoding": "utf8",
+    // "files.encoding": "gbk",
+    "files.encoding": "utf8",
     "C_Cpp.errorSquiggles": "enabled",
     "extensions.autoUpdate": "onlyEnabledExtensions",
     "bitoAI.codeCompletion.enableAutoCompletion": true,
