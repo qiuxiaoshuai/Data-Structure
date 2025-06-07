@@ -5,37 +5,37 @@ typedef struct Linknode{
     struct Linknode *next;  
 } Linknode, *LinkStack;
 
-// åˆå§‹åŒ–æ ˆï¼ˆè®¾ç½®ä¸ºç©ºæ ˆï¼‰
+// ³õÊ¼»¯Õ»£¨ÉèÖÃÎª¿ÕÕ»£©
 void InitStack(LinkStack *top) {
     *top = NULL;
 }
 
-//å…¥æ ˆ
+//ÈëÕ»
 void Push(LinkStack *top,int x){
     Linknode *p = (Linknode *)malloc(sizeof(Linknode));
     if(!p){
-        printf("å†…å­˜åˆ†é…å¤±è´¥!\n");
+        printf("ÄÚ´æ·ÖÅäÊ§°Ü!\n");
     }
     p->data = x;
     p->next = *top;
     *top = p;
 }
 
-//å‡ºæ ˆ
+//³öÕ»
 int Pop(LinkStack *top,int *x){
     if(*top == NULL){
-        printf("æ ˆä¸ºç©º\n");
+        printf("Õ»Îª¿Õ\n");
     }
     Linknode *tamp = *top;
-    *x = tamp->data;//èŽ·å–å½“å‰å‡ºæ ˆçš„å…ƒç´ 
-    *top = tamp->next;//è®©æ ˆé¡¶æŒ‡é’ˆæŒ‡å‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹ï¼ˆå‡ºæ ˆï¼‰
+    *x = tamp->data;//»ñÈ¡µ±Ç°³öÕ»µÄÔªËØ
+    *top = tamp->next;//ÈÃÕ»¶¥Ö¸ÕëÖ¸ÏòÏÂÒ»¸ö½Úµã£¨³öÕ»£©
     free(tamp);
 }
 
-//è¾“å‡ºæ ˆå…ƒç´ !!! è¿™é‡Œä¼ å…¥çš„topåªæ˜¯å‰¯æœ¬ä¸æ”¹å˜åŽŸæŒ‡é’ˆ
+//Êä³öÕ»ÔªËØ!!! ÕâÀï´«ÈëµÄtopÖ»ÊÇ¸±±¾²»¸Ä±äÔ­Ö¸Õë
 void printfStack(LinkStack top){
     printf("\n");
-    printf("å½“å‰æ ˆé¡¶åˆ°æ ˆåº•");
+    printf("µ±Ç°Õ»¶¥µ½Õ»µ×\n");
     while(top){
         printf("%d\n",top->data);
         top = top->next;

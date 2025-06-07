@@ -8,7 +8,7 @@ typedef struct SqQueue{
 }SqQueue;
 
 bool Init(SqQueue *Q,int x){
-    //判断队尾是否溢出
+    //鍒ゆ柇闃熷熬鏄惁婧㈠嚭
     if(Q->rear != Maxsize -1){
         Q->data[Q->rear++] = x;
         return true;
@@ -18,7 +18,7 @@ bool Init(SqQueue *Q,int x){
 }
 
 bool del(SqQueue *Q,int *x){
-    //判断队伍是否为空
+    //鍒ゆ柇闃熶紞鏄惁涓虹┖
     if(Q->front != Q->rear){
         *x = Q->data[Q->front++] ;
         return x;
@@ -32,11 +32,11 @@ int main(){
     Q.front = Q.rear = 0;
     for(int i = 0;i<6;i++){
         if(Init(&Q,i)){
-            printf("入队成功: %d\n", i);
+            printf("鍏ラ槦鎴愬姛: %d\n", i);
         }
     }
     int number;
     while(del(&Q,&number)){
-        printf("出队成功:%d\n",number);
+        printf("鍑洪槦鎴愬姛:%d\n",number);
     }
 }

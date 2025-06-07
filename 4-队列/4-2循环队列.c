@@ -34,11 +34,11 @@ int main(){
     Q.front = Q.rear = 0;
     for(int i = 0;i<6;i++){
         if(Init(&Q,i)){
-            printf("入队成功: %d\n", i);
+            printf("鍏ラ槦鎴愬姛: %d\n", i);
         }
     }
     int number;
     while(del(&Q,&number)){
-        printf("出队成功:%d\n",number);
+        printf("鍑洪槦鎴愬姛:%d\n",number);
     }
 }
