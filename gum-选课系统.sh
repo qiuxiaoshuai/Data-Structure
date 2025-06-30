@@ -307,3 +307,19 @@ teacher_view_course() {
 
 # 入口
 login_menu
+
+#!/bin/bash
+dir="./con.txt"
+
+if [ ! -f $dir  ]; then
+  touch $dir
+fi
+
+read -p "输入你的姓名" name
+read -p "输入你的电话号码" phone
+
+echo $name >> con.txt
+echo $phone >> con.txt
+
+echo "你的信息已经保存在con.txt文件当中"
+cat con.txt
