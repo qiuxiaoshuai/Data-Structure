@@ -76,18 +76,19 @@ void floyd(int graph[MAX][MAX], int n) {
 
 // ===== 主函数：示例测试 =====
 int main() {
-    int n = 4; // 顶点数
+    int n = 5; // 顶点数
 
     // 邻接矩阵初始化
     // graph[i][j] 表示 i 到 j 的边权；无边用 INF 表示
     int graph[MAX][MAX] = {
-        {0,   3,   INF, 7},
-        {8,   0,   2,   INF},
-        {5,   INF, 0,   1},
-        {2,   INF, INF, 0}
+        {0,   INF,  1, INF,  10},
+        {INF, 0,   INF,  1, 5},
+        {INF, 1, 0,   INF, 7},
+        {INF, INF, INF,  0,   1},
+        {INF, INF, INF, INF, 0}
     };
 
-    floyd(graph, n);
+    floyd(graph, 5);
 
     return 0;
 }

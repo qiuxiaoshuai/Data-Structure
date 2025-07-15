@@ -68,10 +68,10 @@ int main() {
     // 邻接矩阵表示图（graph[i][j] 是 i 到 j 的权重）
     // 若无边连接，则设为 INF
     int graph[MAX][MAX] = {
-        {0,   10,  INF, 30,  100},
-        {INF, 0,   50,  INF, INF},
-        {INF, INF, 0,   INF, 10},
-        {INF, INF, 20,  0,   60},
+        {0,   INF,  1, INF,  10},
+        {INF, 0,   INF,  1, 5},
+        {INF, 1, 0,   INF, 7},
+        {INF, INF, INF,  0,   1},
         {INF, INF, INF, INF, 0}
     };
 
