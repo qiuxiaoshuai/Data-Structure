@@ -14,6 +14,17 @@ void printfList(List *L) {
     printf("\n");
 }
 
+void del(List *L){
+    int k = 0;
+    for(int i=1;i<L->leng;i++){
+        if(L->data[k] != L->data[i]){
+            L->data[++k] = L->data[i];
+        }
+    }
+    L->leng = k+1;
+    printfList(L);
+}
+
 void qcList(List *L){
     for(int i = 0;i<L->leng;i++){
         //这里的j不动,因为顺序表的删除，是从后面移位到前面，当出现以下的情况时，可能就会出现漏删除的情况
@@ -40,6 +51,7 @@ void qcList(List *L){
 }
 
 int main(){
-    List L = {{-3, 5, 1, 5, 5, 6}, 6};
-    qcList(&L);
+    List L = {{-3, 5, 1, 5, 5, 6}, 5};
+    // qcList(&L);
+    del(&L);
 }

@@ -14,6 +14,19 @@ void printfList(List *L) {
     printf("\n");
 }
 
+int del(List *L,int s,int t){
+    if(L->leng = 0 || s > t){
+        return -1;
+    }
+    int k=0;
+    for(int i=0;i<L->leng;i++){
+        if(L->data[i] <= s || L->data[i] >= t){
+            L->data[k] = L->data[i];
+            k++;
+        }
+    }
+}
+
 void delList(List *L, int s, int t) {
     if (s >= 1 || s > t) {
         printf("错误：s 和 t 的值不合理，应满足 s < 1 且 s <= t。\n");

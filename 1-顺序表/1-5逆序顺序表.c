@@ -26,6 +26,14 @@ void nixuList(List *L){
     printfList(L);
 }
 
+void all(List *L){
+    int temp;
+    for(int i=0;i<L->leng/2;i++){
+        temp = L->data[i];
+        L->data[i] = L->data[L->leng-i];
+        L->data[L->leng-i] = temp;
+    }
+}
 int main(){
     List L = {{1,2,3,4,5,6},6};
     nixuList(&L);

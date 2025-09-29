@@ -14,6 +14,22 @@ void printfList(List *L){
     printf("\n");
 }
 
+void Del_min(List *L,int *num){
+    int min = L->data[0];
+    int min_index = 0;
+    if(L->leng == 0){
+        return -1;
+    }
+    for(int i=1;i<L->leng;i++){
+        if(L->data[i]<min){
+            min = L->data[i];
+            min_index = i;
+        }
+    }
+    L->data[min_index] = L->data[L->leng-1];
+    return min;
+}
+
 int delList(List *L){
     if(L->leng == 0){
         printf("List为空表");
