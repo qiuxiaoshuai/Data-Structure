@@ -13,7 +13,7 @@ int bll(int a,int b,int c){
 int all(int S1[],int n1,int S2[],int n2,int S3[],int n3){
     int q = 0,w = 0,e = 0;
     int num_a = S1[q],num_b = S2[w],num_c = S3[e];
-    int D = bll(S1[q],S2[w],S3[e]);//初始化
+    int D = bll(S1[q],S2[w],S3[e]);//?????
     while(q < n1 && w < n2 && e < n3){
         int cd = bll(S1[q],S2[w],S3[e]);
         if(D>cd){
@@ -34,7 +34,7 @@ int all(int S1[],int n1,int S2[],int n2,int S3[],int n3){
             e++;
         }
     }
-    printf("最短距离为:%d,相对应的三元组为(%d,%d,%d)",D,num_a,num_b,num_c);
+    printf("???????:%d,????????????(%d,%d,%d)",D,num_a,num_b,num_c);
 }
 
 int main(){
