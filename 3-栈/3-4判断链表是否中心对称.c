@@ -47,10 +47,38 @@ int ifList(LinkNode L,int len){
     return 1;
 }
 
+int pd(LinkNode *L){
+    LinkNode p=(*L),q=(*L);
+    while(q!=NULL && q->next != NULL){
+        p = p->next;
+        q = q->next->next;
+    }
+    //找到中间节点
+    LinkNode head = p;
+    q = p->next;
+    head->next = NULL;
+    while(q!=NULL){
+        LinkNode s = q->next;
+        q->next = head->next;
+        head->next = q;
+        q = s;
+    }
+    LinkNode left = (*L),right = head->next;
+    while(right != NULL){
+        if(left->data != right->data){
+            return -1;
+        }
+        left = left->next;
+        right = right->next;
+    }
+    return 1;
+}
 int main(){
     char a[] = {'x','y','y','x'};
     LinkNode L;
     int lenth_a = sizeof(a) / sizeof(a[0]);
     Init(&L,a,lenth_a);
-    printf("%d",ifList(L,lenth_a));
+    printf("%d\n",ifList(L,lenth_a));
+    printf("%d",pd(&L));
+    
 }
