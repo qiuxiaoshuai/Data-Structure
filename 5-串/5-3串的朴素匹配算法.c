@@ -14,7 +14,7 @@ void PrintfString(SString str){
 
 int Algorithm(SString a,SString b){
     for(int i=0;i<=a.lenght-b.lenght;i++){
-        int j = 0;
+        int j = 0;//设定子串的头指针，每次查找失败时返回头部
         for(;j<b.lenght;j++){
             if(a.data[i+j] != b.data[j]){
                 break;
