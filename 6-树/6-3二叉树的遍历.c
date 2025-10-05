@@ -21,6 +21,38 @@ TreeNode* createNode(char data) {
     return newNode;
 }
 
+// 计算树的高度
+int treeHeight(TreeNode* root) {
+    if (root == NULL) {
+        return 0;
+    }
+    int leftHeight = treeHeight(root->left);
+    int rightHeight = treeHeight(root->right);
+    return (leftHeight > rightHeight) ? leftHeight + 1 : rightHeight + 1;
+}
+
+// 在指定的层次上打印节点
+void printLevel(TreeNode* root, int level) {
+    if (root == NULL) {
+        return;
+    }
+    if (level == 1) {
+        printf("%c ", root->data);  // 打印当前层的节点
+    } else if (level > 1) {
+        printLevel(root->left, level - 1);  // 递归打印左子树
+        printLevel(root->right, level - 1); // 递归打印右子树
+    }
+}
+
+// 层序遍历
+void levelOrder(TreeNode* root) {
+    int height = treeHeight(root);  // 获取树的高度
+    for (int i = 1; i <= height; i++) {
+        printLevel(root, i);  // 打印每一层的节点
+        printf("\n");
+    }
+}
+
 // 先序遍历（根->左->右）
 void preorder(TreeNode* root) {
     if (root != NULL) {
@@ -48,7 +80,7 @@ void postorder(TreeNode* root) {
     }
 }
 
-// 主函数：构建一个简单的树并遍历
+// 主函数：构建一棵简单的树并遍历
 int main() {
     /*
         构造一棵简单的树：
@@ -76,6 +108,9 @@ int main() {
     printf("后序遍历: ");
     postorder(root);
     printf("\n");
+
+    printf("层序遍历: \n");
+    levelOrder(root);
 
     return 0;
 }
