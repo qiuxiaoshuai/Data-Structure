@@ -83,6 +83,67 @@ void freeTree(TreeNode* root) {
     free(root);  // 释放当前节点的内存
 }
 
+// 使用队列的非递归算法求二叉树高度
+int getHeight(TreeNode* root) {
+    if (!root) return 0;  // 空树高度为 0
+
+    // 定义一个简单的队列（用数组实现）
+    TreeNode* queue[1000];
+    int front = 0;  //队列头指针
+    int rear = 0;  // 队列尾指针
+    int height = 0;
+
+    queue[rear++] = root;  // 根节点入队
+
+    for (int i = front; i < rear; i++) {
+        printf("%c ", queue[i]->data);
+    }
+    printf("\n");
+
+    while (front < rear) {
+        int levelSize = rear - front;  // 当前层节点数
+        // 遍历当前层
+        for (int i = 0; i < levelSize; i++) {
+            TreeNode* node = queue[front++];  // 出队
+            // 左右孩子入队
+            if (node->left) queue[rear++] = node->left;
+            if (node->right) queue[rear++] = node->right;
+        }
+        height++;  // 一层处理完毕，层数+1
+    }
+
+    return height;
+}
+
+// 判断是否为完全二叉树
+int isCompleteBinaryTree(TreeNode* root) {
+    if (!root) return 1;  // 空树视为完全二叉树
+
+    TreeNode* queue[1000];
+    int front = 0, rear = 0;
+    int flag = 0;  // 标记是否出现过空节点
+
+    queue[rear++] = root;
+
+    while (front < rear) {
+        TreeNode* node = queue[front++];  // 出队
+
+        if (node) {
+            // 若之前出现过空节点，现在又遇到非空节点 → 不是完全二叉树
+            if (flag)
+                return 0;
+            // 左右子节点入队
+            queue[rear++] = node->left;
+            queue[rear++] = node->right;
+        } else {
+            // 第一次遇到空节点，开启“空标志”
+            flag = 1;
+        }
+    }
+
+    return 1;  // 遍历完没冲突，就是完全二叉树
+}
+
 int main() {
     printf("请输入二叉树的前序遍历字符串（使用 '#' 表示空节点）：\n");
     // 读取用户输入的二叉树字符串
@@ -114,6 +175,10 @@ int main() {
     printf("后序遍历: ");
     postOrder(root);
     printf("\n");
+
+    // 计算高度
+    int height = getHeight(root);
+    printf("二叉树高度（非递归）: %d\n", height);
 
     freeTree(root);   // 释放树的内存
     return 0;
