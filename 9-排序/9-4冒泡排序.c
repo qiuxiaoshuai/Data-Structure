@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// æ‰“å°æ•°ç»„
+// ´òÓ¡Êı×é
 void printArray(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
@@ -8,29 +8,29 @@ void printArray(int arr[], int n) {
     printf("\n");
 }
 
-// å†’æ³¡æ’åºï¼ˆå¸¦æ­¥éª¤è¾“å‡ºï¼‰
+// Ã°ÅİÅÅĞò£¨´ø²½ÖèÊä³ö£©
 void bubbleSort(int arr[], int n) {
     int i, j, temp, step = 1;
-    int swapped;  // æ ‡è®°æ˜¯å¦å‘ç”Ÿäº¤æ¢ï¼Œç”¨äºä¼˜åŒ–
+    int swapped;  // ±ê¼ÇÊÇ·ñ·¢Éú½»»»£¬ÓÃÓÚÓÅ»¯
 
     for (i = 0; i < n - 1; i++) {
         swapped = 0;
-        printf("ç¬¬ %d è½®æ’åº:\n", step++);
+        printf("µÚ %d ÂÖÅÅĞò:\n", step++);
 
         for (j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
-                // äº¤æ¢ç›¸é‚»å…ƒç´ 
+                // ½»»»ÏàÁÚÔªËØ
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
                 swapped = 1;
             }
 
-            printf("  æ¯”è¾ƒ [%d,%d] å: ", j, j + 1);
+            printf("  ±È½Ï [%d,%d] ºó: ", j, j + 1);
             printArray(arr, n);
         }
 
-        // å¦‚æœæœ¬è½®æ²¡æœ‰å‘ç”Ÿäº¤æ¢ï¼Œè¯´æ˜æ•°ç»„å·²æ’åºå¥½ï¼Œç›´æ¥é€€å‡º
+        // Èç¹û±¾ÂÖÃ»ÓĞ·¢Éú½»»»£¬ËµÃ÷Êı×éÒÑÅÅĞòºÃ£¬Ö±½ÓÍË³ö
         if (!swapped) break;
 
         printf("\n");
@@ -41,13 +41,13 @@ int main() {
     int arr[] = {9, 5, 2, 8, 1, 3};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("æ’åºå‰: ");
+    printf("ÅÅĞòÇ°: ");
     printArray(arr, n);
     printf("\n");
 
     bubbleSort(arr, n);
 
-    printf("æ’åºå: ");
+    printf("ÅÅĞòºó: ");
     printArray(arr, n);
 
     return 0;
