@@ -2,14 +2,19 @@
 #include <stdlib.h>
 #include <math.h>
 
-int main(){
-    int add[7] = {20,3,11,18,9,14,7};
 
-    for(int i =0;i<7;i++){
-        printf("%d - %d\n",add[i],(add[i] * 3)%11);
-    }
-    // short si = -32767;
-    unsigned short usi = 65535;
-    short si=usi;
-    printf("%d",si);
+unsigned umul(unsigned x,unsigned y){return x*y;}
+int imul(int x,int y){ return x*y;}
+int main(){
+    unsigned int x = 134;
+    unsigned int y = 246;
+    int m=x;
+    int n=y;
+    unsigned int z1=x-y;
+    unsigned int z2=x+y;
+    int k1 = m-n;
+    int k2 = m+n;
+
+    printf("m:%d n:%d z1:%d z2:%d k1:%d k2:%d",m,n,z1,z2,k1,k2);
+
 }
