@@ -13,7 +13,7 @@ void printList(LinkNode List){
     }
     printf("\n");
 }
-
+//创建链表
 int csh(LinkNode *L,int A[],int leng){
     *L = (Node *)malloc(sizeof(Node));
     (*L)->link = NULL;
@@ -46,10 +46,10 @@ int add(LinkNode *L){
     p = (*L)->link;
     LinkNode q = (*L);
     while(p!=NULL){
-        int idx = abs(p->data)-1;
+        int idx = abs(p->data)-1;//确定绝对值数组的下标
         if(kj[idx] == 0){
             kj[idx] = 1;
-            q = p;
+            q = p;//跟新指针结点
             p = p->link;
         }else{
             LinkNode s = p;

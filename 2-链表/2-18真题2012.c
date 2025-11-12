@@ -45,7 +45,7 @@ void add(LinkNode str1,LinkNode str2,int len_1,int len_2){
     while(arr1[j] == arr2[b] && j >=0 && b >= 0){
         j--;
         b--;
-        index_if++;
+        index_if++;//统计公共长度
     }
     printf("开始的位置是为%c",arr1[j+1]);
 }
